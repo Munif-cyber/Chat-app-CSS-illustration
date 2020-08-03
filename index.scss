@@ -1,0 +1,465 @@
+// Text colors
+$PaleViolet:hsl(276, 100%, 81%);
+$ModerateViolet:hsl(276, 55%, 52%);
+$DesaturatedDarkViolet: hsl(271, 15%, 43%);
+$GrayishBlue: hsl(206, 6%, 79%);
+$VeryDarkDesaturatedViolet: hsl(271, 36%, 24%);
+$DarkGrayishViolet: hsl(270, 7%, 64%);
+
+// Gradient 
+$LightMagenta: hsl(293, 100%, 63%);
+$LightViolet: hsl(264, 100%, 61%);
+
+// Secondary
+$White: hsl(0, 0%, 100%);
+$LightGrayishViolet: hsl(270, 20%, 96%);
+$VeryDarkDesaturatedViolet: hsl(271, 36%, 24%);
+$VeryLightMagenta: hsl(289, 100%, 72%);
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    font-size:13px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+@mixin display() {
+    display:flex;
+    flex-direction:column;
+}
+@media only screen and (max-width:450px){
+body{
+    @include display();
+    // background:purple;
+
+    section{
+        @include display();
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        .purple{
+            position:absolute;
+            left:0;
+            top:0;
+            margin-left:-70px;
+            z-index: -1;
+            border-radius: 0 0 100% ;
+            width:70vw;
+            height: 80vh;
+            background: linear-gradient( to bottom right, $LightViolet ,$LightMagenta);
+        }
+        .canvas{
+            @include display();
+            // align-items: center;
+            width:70vw;
+            margin:50px auto;
+            height: 75vh;
+            background:$LightGrayishViolet;
+            box-shadow: 0px 10px 30px 0px rgba($color: #000000, $alpha: 0.2) ;
+            border-radius: 40px;
+            border: 10px solid white;
+            transition:all 1s ease;
+            &:hover{
+                transform: rotate(360deg);
+                
+            }
+            .first{
+                background:linear-gradient( to right, $LightViolet ,$LightMagenta);
+                border-radius: 30px 30px 0 0;
+                height:70px;
+                @include display();
+                align-items: center;
+                position: relative;
+                .camera{
+                    // position: absolute;
+                    // right:40px;
+                    // top:0px;
+                    // transform:translate(0px,0px);
+                    width: 40vw;
+                    height:25px;
+                    background: white;
+                    margin-bottom: 10px;
+                    border-radius: 0 0 20px 20px;
+                }
+                .profile{
+                    display:flex;
+                    align-items:center;
+                    // background:white;
+                    width:90%;
+                    margin-bottom:10px;
+                    i{
+                        color:white;
+                        margin-right:10px;
+                        &.d{
+                            position: relative;
+                            left:70px;
+                        }
+                    }
+                    .man{
+                        width:30px;
+                        height:30px;
+                        background-image: url("images/avatar.jpg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        border:1px white solid;
+                        border-radius: 50%;
+                        
+                    }
+                    .name{
+                        font-size: 1rem;
+                        font-family: arial;
+                        line-height: 10px;
+                        margin-left:10px;
+                        color:white;
+                        span{
+                            font-size:0.6rem;
+                            color:$PaleViolet;
+                            
+                        }
+                    }
+                }
+                
+            }
+        }
+        .main{
+            // height:100%;
+            @include display();
+            width:90%;
+            margin:5px auto;
+            // background: white;
+            justify-content: space-between;
+            height:100vh;
+            .chat{
+                background: rgba($color: $GrayishBlue, $alpha: 0.3);
+                color:$ModerateViolet;
+                // width:120px;
+                align-self:flex-start;
+                margin:3px;
+                border-radius:10px;
+                font-size:0.7rem;
+                padding:5px 10px;
+                img{
+                    width:40px;
+                    clip-path: circle(25px);
+                    margin:0 1px;
+                    height:auto;
+                }
+                &.c{
+                    display:flex;
+                    justify-content: flex-end;
+                    background:white;
+                    color:$DesaturatedDarkViolet;
+                align-self: flex-end; 
+                width:auto;
+                &.i{
+                    background:none;
+                }
+                }
+            }
+            .price{
+                display:flex;
+                align-items: center;
+                background:linear-gradient( to left, $LightViolet ,$LightMagenta);
+                color:white;
+                width: 80%;
+                height:30px;
+                border-radius: 10px;
+                margin:1px;
+                position: relative;
+                p{
+                    font-size: 0.8rem;
+                    font-weight:100;
+                }
+                
+                .radio{
+                    width: 10px;
+                    height:10px;
+                    border-radius: 50%;
+                    border:1px solid $VeryLightMagenta;
+                    margin:10px;
+                }
+                .owo{
+                    position: absolute;
+                    right:10px;
+
+                }
+            }
+            form{
+                // background:pink;
+                margin-top: 4%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                
+                position: relative;
+                
+                input{
+                    border-radius: 10px;
+                    background: white;
+                    padding: 0px 10px;
+                    font-size: 0.8rem;
+                    color:$GrayishBlue;
+                    width:auto;
+                    height:30px;
+                    width:100%;
+                    border: none;
+                }
+                button{
+                    position: absolute;
+                    right:4px;
+                    width:20px;
+                    height: 20px;
+                    border-radius:50%;
+                    border: none;
+                    background:$VeryDarkDesaturatedViolet;
+                    i{
+                        transform:scaleX(-1);
+                        color:white;
+                    }
+                    
+                }
+            }
+        }
+        .booking{
+            width:90%;
+            margin:0 auto;
+            text-align:center;
+            h1{
+                font-size:3rem;
+                margin-bottom: 20px;
+                color:$VeryDarkDesaturatedViolet;
+            }
+            p{
+                width:90%;
+                margin:0 auto;
+                line-height:25px;
+                font-size: 1.2rem;
+                margin-bottom: 50px;
+                color:$DarkGrayishViolet;
+            }
+        }
+    }
+
+}
+};
+
+
+
+
+
+// This is for the desktop screen
+@media only screen and (min-width:451px){
+    body{
+        @include display();
+        flex-direction:row;
+        flex-wrap:wrap;
+        section{
+            @include display();
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            
+            .purple{
+                position:absolute;
+                left:0;
+                top:0;
+                margin-left:-70px;
+                z-index: -1;
+                border-radius: 0 0 50% 50%;
+                width:35vw;
+                height: 80vh;
+                background: linear-gradient( to bottom right, $LightViolet ,$LightMagenta);
+            }
+            .canvas{
+                @include display();
+                // align-items: center;
+                width:220px;
+                margin:50px auto;
+                height: 450px;
+                background:$LightGrayishViolet;
+                box-shadow: 0px 10px 30px 0px rgba($color: #000000, $alpha: 0.2) ;
+                border-radius: 40px;
+                border: 10px solid white;
+                transition:all 2s ease;
+                &:hover{
+                    transform: rotate(360deg);
+                    
+                }
+                .first{
+                    background:linear-gradient( to right, $LightViolet ,$LightMagenta);
+                    border-radius: 30px 30px 0 0;
+                    height:70px;
+                    @include display();
+                    align-items: center;
+                    position: relative;
+                    .camera{
+                        width: 120px;
+                        height:15px;
+                        background: white;
+                        margin-bottom: 10px;
+                        border-radius: 0 0 20px 20px;
+                    }
+                    .profile{
+                        display:flex;
+                        align-items:center;
+                        // background:white;
+                        width:90%;
+                        margin-bottom:10px;
+                        position: relative;
+                        i{
+                            color:white;
+                            margin-right:10px;
+                            &.d{
+                                position: absolute;
+                                right:0px;
+                            }
+                        }
+                        .man{
+                            width:30px;
+                            height:30px;
+                            background-image: url("images/avatar.jpg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            border:1px white solid;
+                            border-radius: 50%;
+                            
+                        }
+                        .name{
+                            font-size: 1rem;
+                            font-family: arial;
+                            line-height: 10px;
+                            margin-left:10px;
+                            color:white;
+                            span{
+                                font-size:0.6rem;
+                                color:$PaleViolet;
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .main{
+                // height:100%;
+                @include display();
+                width:90%;
+                margin:5px auto;
+                // background: white;
+                justify-content: space-between;
+                height:100vh;
+                .chat{
+                    background: rgba($color: $GrayishBlue, $alpha: 0.3);
+                    color:$ModerateViolet;
+                    // width:120px;
+                    align-self:flex-start;
+                    margin:3px;
+                    border-radius:10px;
+                    font-size:0.7rem;
+                    padding:5px 10px;
+                    img{
+                        width:40px;
+                        clip-path: circle(25px);
+                        margin:0 1px;
+                        height:auto;
+                    }
+                    &.c{
+                        display:flex;
+                        justify-content: flex-end;
+                        background:white;
+                        color:$DesaturatedDarkViolet;
+                    align-self: flex-end; 
+                    width:auto;
+                    &.i{
+                        background:none;
+                    }
+                    }
+                }
+                .price{
+                    display:flex;
+                    align-items: center;
+                    background:linear-gradient( to left, $LightViolet ,$LightMagenta);
+                    color:white;
+                    width: 80%;
+                    height:30px;
+                    border-radius: 10px;
+                    margin:1px;
+                    position: relative;
+                    p{
+                        font-size: 0.8rem;
+                        font-weight:100;
+                    }
+                    
+                    .radio{
+                        width: 10px;
+                        height:10px;
+                        border-radius: 50%;
+                        border:1px solid $VeryLightMagenta;
+                        margin:10px;
+                    }
+                    .owo{
+                        position: absolute;
+                        right:10px;
+    
+                    }
+                }
+                form{
+                    // background:pink;
+                    margin-top: 4%;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    position: relative;
+                    
+                    input{
+                        border-radius: 10px;
+                        background: white;
+                        padding: 0px 10px;
+                        font-size: 0.8rem;
+                        color:$GrayishBlue;
+                        width:auto;
+                        height:30px;
+                        width:100%;
+                        border: none;
+                    }
+                    button{
+                        position: absolute;
+                        right:4px;
+                        width:20px;
+                        height: 20px;
+                        border-radius:50%;
+                        border: none;
+                        background:$VeryDarkDesaturatedViolet;
+                        i{
+                            transform:scaleX(-1);
+                            color:white;
+                        }
+                        
+                    }
+                }
+            }
+            .booking{
+                width:100%;
+                margin:0 auto;
+                text-align:left;
+                h1{
+                    font-size:2rem;
+                    margin-bottom: 20px;
+                    color:$VeryDarkDesaturatedViolet;
+                }
+                p{
+                    width:90%;
+                    margin:0 ;
+                    line-height:25px;
+                    font-size: 1rem;
+                    margin-bottom: 50px;
+                    color:$DarkGrayishViolet;
+                }
+            }
+        }
+    
+    }
+}

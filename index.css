@@ -1,0 +1,534 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 450px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section .purple {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: -70px;
+    z-index: -1;
+    border-radius: 0 0 100%;
+    width: 70vw;
+    height: 80vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to bottom right, #8838ff, #e942ff);
+  }
+  body section .canvas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 70vw;
+    margin: 50px auto;
+    height: 75vh;
+    background: #f5f3f7;
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    border: 10px solid white;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  body section .canvas:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  body section .canvas .first {
+    background: -webkit-gradient(linear, left top, right top, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to right, #8838ff, #e942ff);
+    border-radius: 30px 30px 0 0;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  body section .canvas .first .camera {
+    width: 40vw;
+    height: 25px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .canvas .first .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  body section .canvas .first .profile i {
+    color: white;
+    margin-right: 10px;
+  }
+  body section .canvas .first .profile i.d {
+    position: relative;
+    left: 70px;
+  }
+  body section .canvas .first .profile .man {
+    width: 30px;
+    height: 30px;
+    background-image: url("images/avatar.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px white solid;
+    border-radius: 50%;
+  }
+  body section .canvas .first .profile .name {
+    font-size: 1rem;
+    font-family: arial;
+    line-height: 10px;
+    margin-left: 10px;
+    color: white;
+  }
+  body section .canvas .first .profile .name span {
+    font-size: 0.6rem;
+    color: #d89eff;
+  }
+  body section .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    margin: 5px auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100vh;
+  }
+  body section .main .chat {
+    background: rgba(198, 202, 205, 0.3);
+    color: #9241c8;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 3px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+  body section .main .chat img {
+    width: 40px;
+    -webkit-clip-path: circle(25px);
+            clip-path: circle(25px);
+    margin: 0 1px;
+    height: auto;
+  }
+  body section .main .chat.c {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background: white;
+    color: #6e5d7e;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    width: auto;
+  }
+  body section .main .chat.c.i {
+    background: none;
+  }
+  body section .main .price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: -webkit-gradient(linear, right top, left top, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to left, #8838ff, #e942ff);
+    color: white;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 1px;
+    position: relative;
+  }
+  body section .main .price p {
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+  body section .main .price .radio {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #e570ff;
+    margin: 10px;
+  }
+  body section .main .price .owo {
+    position: absolute;
+    right: 10px;
+  }
+  body section .main form {
+    margin-top: 4%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  body section .main form input {
+    border-radius: 10px;
+    background: white;
+    padding: 0px 10px;
+    font-size: 0.8rem;
+    color: #c6cacd;
+    width: auto;
+    height: 30px;
+    width: 100%;
+    border: none;
+  }
+  body section .main form button {
+    position: absolute;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: #3e2753;
+  }
+  body section .main form button i {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+    color: white;
+  }
+  body section .booking {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  body section .booking h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #3e2753;
+  }
+  body section .booking p {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #a39daa;
+  }
+}
+
+@media only screen and (min-width: 451px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section .purple {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: -70px;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+    width: 35vw;
+    height: 80vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to bottom right, #8838ff, #e942ff);
+  }
+  body section .canvas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 220px;
+    margin: 50px auto;
+    height: 450px;
+    background: #f5f3f7;
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    border: 10px solid white;
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+  body section .canvas:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  body section .canvas .first {
+    background: -webkit-gradient(linear, left top, right top, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to right, #8838ff, #e942ff);
+    border-radius: 30px 30px 0 0;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  body section .canvas .first .camera {
+    width: 120px;
+    height: 15px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .canvas .first .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90%;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  body section .canvas .first .profile i {
+    color: white;
+    margin-right: 10px;
+  }
+  body section .canvas .first .profile i.d {
+    position: absolute;
+    right: 0px;
+  }
+  body section .canvas .first .profile .man {
+    width: 30px;
+    height: 30px;
+    background-image: url("images/avatar.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px white solid;
+    border-radius: 50%;
+  }
+  body section .canvas .first .profile .name {
+    font-size: 1rem;
+    font-family: arial;
+    line-height: 10px;
+    margin-left: 10px;
+    color: white;
+  }
+  body section .canvas .first .profile .name span {
+    font-size: 0.6rem;
+    color: #d89eff;
+  }
+  body section .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    margin: 5px auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100vh;
+  }
+  body section .main .chat {
+    background: rgba(198, 202, 205, 0.3);
+    color: #9241c8;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 3px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+  body section .main .chat img {
+    width: 40px;
+    -webkit-clip-path: circle(25px);
+            clip-path: circle(25px);
+    margin: 0 1px;
+    height: auto;
+  }
+  body section .main .chat.c {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background: white;
+    color: #6e5d7e;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    width: auto;
+  }
+  body section .main .chat.c.i {
+    background: none;
+  }
+  body section .main .price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: -webkit-gradient(linear, right top, left top, from(#8838ff), to(#e942ff));
+    background: linear-gradient(to left, #8838ff, #e942ff);
+    color: white;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 1px;
+    position: relative;
+  }
+  body section .main .price p {
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+  body section .main .price .radio {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #e570ff;
+    margin: 10px;
+  }
+  body section .main .price .owo {
+    position: absolute;
+    right: 10px;
+  }
+  body section .main form {
+    margin-top: 4%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  body section .main form input {
+    border-radius: 10px;
+    background: white;
+    padding: 0px 10px;
+    font-size: 0.8rem;
+    color: #c6cacd;
+    width: auto;
+    height: 30px;
+    width: 100%;
+    border: none;
+  }
+  body section .main form button {
+    position: absolute;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: #3e2753;
+  }
+  body section .main form button i {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+    color: white;
+  }
+  body section .booking {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  body section .booking h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3e2753;
+  }
+  body section .booking p {
+    width: 90%;
+    margin: 0;
+    line-height: 25px;
+    font-size: 1rem;
+    margin-bottom: 50px;
+    color: #a39daa;
+  }
+}
+/*# sourceMappingURL=index.css.map */
